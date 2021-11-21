@@ -29,7 +29,7 @@ ExtendibleHash<K, V>::~ExtendibleHash()
  */
 template <typename K, typename V>
 size_t ExtendibleHash<K, V>::HashKey(const K &key) {
-	return hash<K>(key) & ((1 << GlobalDepth) - 1);
+	return ((long long int)key) & ((1 << GlobalDepth) - 1);
 }
 
 /*
